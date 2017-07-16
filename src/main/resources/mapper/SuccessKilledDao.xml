@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+    <insert id="insertSuccessKilledDao">
+        insert into
+          success_killed(seckill_id,user_phone,state,create_time)
+        values(#{name},#{name},#{name},now())
+        where seckill_id = #{seckillId}
+    </insert>
+
+    <select id="queryByIdWithSeckill" resultType="SuccessKilled">
+        select seckill_id,user_phone,number,state,create_time
+        from success_killed
+        where seckill_id = #{seckillId}
+    </select>
+</mapper>

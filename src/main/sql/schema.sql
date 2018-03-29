@@ -5,9 +5,9 @@ CREATE TABLE seckill(
   `seckill_id` bigint NOT NULL AUTO_INCREMENT COMMENT '商品库存',
   `name` varchar(120) NOT NULL COMMENT '商品名称',
   `number` INT NOT NULL COMMENT '商品数量',
-  `creat_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `start_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '秒杀开始时间',
-  `end_time` timestamp  NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '秒杀结束时间',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `start_time` timestamp NOT NULL COMMENT '秒杀开始时间',
+  `end_time` timestamp  NOT NULL COMMENT '秒杀结束时间',
   PRIMARY KEY(seckill_id),
   key idx_start_time(start_time),
   key idx_end_time(end_time),
@@ -17,10 +17,10 @@ CREATE TABLE seckill(
 --初始化
 insert  into seckill (name,number,start_time,end_time)
 values
-    ('0元秒杀iphone7',100,'2017-04-20 00:00:00','2017-04-21 00:00:00'),
-    ('10元秒杀iphone7',100,'2017-04-20 00:00:00','2017-04-21 00:00:00'),
-    ('100元秒杀iphone7',100,'2017-04-20 00:00:00','2017-04-21 00:00:00'),
-    ('200元秒杀iphone7',100,'2017-04-20 00:00:00','2017-04-21 00:00:00');
+    ('0元秒杀iphone7',100,'2018-03-20 00:00:00','2018-08-21 00:00:00'),
+    ('10元秒杀iphone7',100,'2018-03-20 00:00:00','2018-08-21 00:00:00'),
+    ('100元秒杀iphone7',100,'2018-03-20 00:00:00','2018-08-21 00:00:00'),
+    ('200元秒杀iphone7',100,'2018-03-20 00:00:00','2018-08-21 00:00:00');
 
 --秒杀成功明细
 --用户登陆认证相关

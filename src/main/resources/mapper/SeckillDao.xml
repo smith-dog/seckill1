@@ -10,9 +10,9 @@
         set
           number = number - 1
         where seckill_id = #{seckillId}
-        and start_time <![CDATA[<=]]> #{killTime}
-        and end_time >= #{killTime}
-        and number > 0;
+        and start_time &lt;= #{killTime}
+        and end_time &gt;= #{killTime}
+        and number &gt; 0;
     </update>
 
     <select id="queryById" resultType="Seckill">

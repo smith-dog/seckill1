@@ -1,5 +1,6 @@
 package org.seckill.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.seckill.entity.SuccessKilled;
 
 import javax.annotation.Resource;
@@ -11,8 +12,8 @@ import java.util.Date;
 @Resource
 public interface SuccessKilledDao {
 
-    int insertSuccessKilledDao(Long seckillId,Long userPhone,short state);
+    int insertSuccessKilledDao(@Param("seckillId") Long seckillId, @Param("userPhone")Long userPhone);
 
-    SuccessKilled queryByIdWithSeckill(long SeckillId);
+    SuccessKilled queryByIdWithSeckill(@Param("seckillId") Long seckillId, @Param("userPhone")Long userPhone);
 
 }
